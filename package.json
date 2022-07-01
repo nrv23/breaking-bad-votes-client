@@ -19,8 +19,13 @@
     "@angular/platform-browser": "~11.2.14",
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
+    "@apollo/client": "^3.6.9",
+    "apollo-angular": "^2.1.0",
+    "graphql": "^15.0.0",
+    "react": "^18.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "uninstall": "^0.0.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
@@ -29,6 +34,7 @@
     "@angular/compiler-cli": "~11.2.14",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "@types/react": "^18.0.14",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
