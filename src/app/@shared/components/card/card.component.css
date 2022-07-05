@@ -1,0 +1,14 @@
+.card {
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}

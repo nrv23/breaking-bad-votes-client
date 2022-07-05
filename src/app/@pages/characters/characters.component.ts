@@ -1,4 +1,4 @@
-import { ICharacters } from './../../interface/Character';
+import { Character, ICharacter } from './../../interface/Character';
 import { CharactersService } from './characters.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class CharactersComponent implements OnInit {
   constructor(private characterService: CharactersService) {}
 
-  characters: unknown | ICharacters = [];
+  charactersList: Character[] = [];
 
   ngOnInit(): void {
     this.characterService.getCharacters().subscribe(
       (response) => {
         const { characters } = response;
-        this.characters = characters;
+        this.charactersList = characters;
       },
       (err: Error) => {
         console.log(err.message);

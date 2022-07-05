@@ -1,3 +1,4 @@
+import { CardModule } from './../../@shared/components/card/card.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { CharactersComponent } from './characters.component';
   ],
   imports: [
     CommonModule,
-    CharactersRoutingModule
+    CharactersRoutingModule,
+    CardModule
   ]
 })
 export class CharactersModule { }

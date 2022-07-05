@@ -1,1 +1,24 @@
-<p>details works!</p>
+<h1 class="my-4"> {{character?.name}} - <small> {{character?.actor}} </small></h1>
+
+<!-- Portfolio Item Row -->
+<div class="row">
+
+    <div class="col-md-5">
+        <img class="img-fluid" [src]="character?.photo" [alt]="character?.url"
+            onerror="this.src='./assets/img/default.webp'">
+    </div>
+
+    <div class="col-md-7">
+        <h3 class="my-3">Descripción del personaje</h3>
+        <p>{{ character?.description }}</p>
+        <h3 class="my-3">Detalles del personaje</h3>
+        <ul>
+            <li>Votos recibidos: {{character?.votes}}</li>
+            <li>Episodios: {{ character?.total_episodes }}</li>
+        </ul>
+        <a [href]="character?.url" class="btn btn-success" target="_blank">
+            Más información
+        </a>
+    </div>
+
+</div>

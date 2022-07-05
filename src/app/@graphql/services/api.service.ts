@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { ApolloQueryResult, DocumentNode, Observable } from '@apollo/client';
+import { ApolloQueryResult, DocumentNode } from '@apollo/client';
 import { map } from 'rxjs/internal/operators/map';
-import { ICharacters } from 'src/app/interface/Character';
+
 
 
 @Injectable({

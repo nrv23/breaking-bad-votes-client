@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GraphQLModule } from './@graphql/modules/graphql.module';
 import { NavbarComponent } from './@core/components/navbar/navbar.component';
-;
+
 
 
 @NgModule({
@@ -19,7 +19,6 @@ import { NavbarComponent } from './@core/components/navbar/navbar.component';
     AppRoutingModule,
     HttpClientModule,
     GraphQLModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

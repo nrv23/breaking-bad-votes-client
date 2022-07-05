@@ -2,7 +2,7 @@ import { Apollo } from 'apollo-angular';
 import { ApiService } from './../../@graphql/services/api.service';
 import { ICharacters } from './../../interface/Character';
 import { Injectable } from '@angular/core';
-import { GET_CHARACTERS } from 'src/app/@graphql/operations/query';
+import { GET_CHARACTERS } from 'src/app/@graphql/operations/Characters';
 
 import { map } from 'rxjs/internal/operators/map';
 
@@ -16,8 +16,8 @@ export class CharactersService extends ApiService  {
     super(apollo); // se le pasa el parametro apollo porque es el que va leer las funciones heredadas
   }
 
-  getCharacters() {
-    return this.query(GET_CHARACTERS).pipe(
+  getCharacters(skip: boolean = false) {
+    return this.query(GET_CHARACTERS,{skip}).pipe(
       map((result) => {
         return result as ICharacters;
       })
