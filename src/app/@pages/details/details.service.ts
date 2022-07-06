@@ -14,8 +14,8 @@ export class DetailsService extends ApiService {
     super(apollo);
   }
 
-  getCharacter(id: string) {
-    return this.query(GET_CHARACTER, { id }).pipe(
+  getCharacter(id: string, skip: boolean = false) {
+    return this.query(GET_CHARACTER, { id,skip }).pipe(
       map((response) => response as ICharacter)
     );
   }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { ApolloQueryResult, DocumentNode } from '@apollo/client';
+import { ApolloQueryResult, DocumentNode, Observable } from '@apollo/client';
 import { map } from 'rxjs/internal/operators/map';
 
 
@@ -29,4 +29,19 @@ export class ApiService {
       .valueChanges.pipe(map((result: ApolloQueryResult<unknown>) =>  result.data))
 
   }
+
+  protected mutation(mutation: DocumentNode,variables: object = {},context: object = {}) {
+
+    return this.apollo.mutate({
+      mutation,
+      variables,
+      context
+    })
+    .pipe(map((result) => result.data as unknown))
+  }
+
+  protected suscription() {
+    
+  }
+
 }
