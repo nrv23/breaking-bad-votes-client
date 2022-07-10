@@ -1,7 +1,9 @@
-<h1 class="my-4"> {{character?.name}} - <small> {{character?.actor}} </small></h1>
 
+<app-loading *ngIf="loading"></app-loading>
+<h2 *ngIf="!loading"> {{character?.name}} - <small> {{character?.actor}} </small></h2>
+<hr *ngIf="!loading">
 <!-- Portfolio Item Row -->
-<div class="row">
+<div class="row" *ngIf="!loading">
 
     <div class="col-md-5">
         <img class="img-fluid" [src]="character?.photo" [alt]="character?.url"
@@ -19,6 +21,11 @@
         <a [href]="character?.url" class="btn btn-success" target="_blank">
             Más información
         </a>
+        
+       
     </div>
-
+    
+    <div class="col-md-5">
+        <button (click) = "votar()" class="btn btn-primary btn-block mt-4" >Votar</button>
+    </div>
 </div>

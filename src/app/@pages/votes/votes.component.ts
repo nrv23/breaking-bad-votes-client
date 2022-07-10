@@ -15,20 +15,20 @@ export class VotesComponent implements OnInit {
   ) {}
 
   votesData: Character[] = [];
+  loading: boolean = true;
   addVote(id: string | number) {
     this.votesService.addVote(id).subscribe(
       (response) => {
-        const { addVote: {
-         // characters,
-          status,
-          message
-        } } = response;
+        const {
+          addVote: {
+            // characters,
+            status,
+            message,
+          },
+        } = response;
 
-
-        if(!status) {
-
+        if (!status) {
         } else {
-          
         }
       },
       (err: Error) => {
@@ -40,10 +40,15 @@ export class VotesComponent implements OnInit {
     this.characterService.getCharacters(true).subscribe(
       (response) => {
         this.votesData = response.characters;
+        setTimeout(() => {
+          this.loading = false;
+        }, 450);
       },
       (err: Error) => {
         console.log({ err });
       }
     );
+
+    this.votesService.changesAllVotesListener().subscribe();
   }
 }
